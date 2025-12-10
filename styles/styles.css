@@ -1,0 +1,74 @@
+body{
+    background-color:rgb(156, 185, 101);
+    color:rgb(163, 124, 200);
+}
+
+h1{
+    font-sixe:36px;
+    color:gray;
+    text-align: center;
+
+}
+h2{
+    color:aqua;
+    text-decoration:underline;
+    font-style:italic;
+    font-weight: bold;
+}
+p{
+    font-size:25px;
+}
+/*comment*/
+#pinkparagraph{
+    color:pink;
+}
+
+.pretty{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.ugly{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.header{
+    z-index:10;
+}
+.common{
+    background-color: rgb(133, 180, 222);
+    border:2px solid white;
+    position:absolute;
+}
+
+.left{
+    top: 115px;
+    left:15px;
+    width:100px;
+    bottom:40px;
+}
+
+.main{
+    top:115px;
+    left:130px;
+    right:140px;
+    bottom:40px;
+}
+
+.right{
+    top:115;
+    right:25px;
+    width:100px;
+    height:100px;
+}
+
+.footer{
+    bottom:15px;
+    height:40px;
+    left:15px;
+    right:25px;
+    position:fixed;
+    background-color: aquamarine;
+}
+
+.redtext{
+    color:red
+}

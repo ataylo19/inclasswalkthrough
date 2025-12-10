@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>How to Read Music — A Beginner's Guide</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f8faf8; padding: 20px; color: #213040; }
+    h1, h2 { text-align: center; }
+    .section { background: #ffffff; padding: 20px; border-radius: 12px; margin: 20px auto; max-width: 900px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+    .img-box { text-align: center; margin: 20px 0; }
+    svg { max-width: 100%; height: auto; }
+  </style>
+</head>
+<body>
+  <h1>How to Read Music — A Beginner's Guide</h1>
+
+  <div class="section">
+    <h2>Example: Staff Lines & Treble Clef</h2>
+    <p>This diagram shows the five staff lines, four spaces, and the treble clef symbol.</p>
+
+    <div class="img-box">
+      <!-- Simple SVG of a staff with treble clef -->
+      <svg width="600" height="200" viewBox="0 0 600 200">
+        <!-- Staff lines -->
+        <g stroke="#213040" stroke-width="2">
+          <line x1="50" y1="60" x2="550" y2="60" />
+          <line x1="50" y1="80" x2="550" y2="80" />
+          <line x1="50" y1="100" x2="550" y2="100" />
+          <line x1="50" y1="120" x2="550" y2="120" />
+          <line x1="50" y1="140" x2="550" y2="140" />
+        </g>
+        <!-- Treble clef -->
+        <path d="M120 40 C90 0, 90 70, 120 90 C150 110, 150 150, 120 160 C80 160, 80 120, 120 120" fill="none" stroke="#213040" stroke-width="3" />
+      </svg>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Annotated Notes on the Staff</h2>
+    <p>Here are some labeled notes on the treble clef to help memorize line and space notes.</p>
+
+    <div class="img-box">
+      <!-- Notes diagram -->
+      <svg width="600" height="250" viewBox="0 0 600 250">
+        <!-- Staff lines -->
+        <g stroke="#213040" stroke-width="2">
+          <line x1="50" y1="80" x2="550" y2="80" />
+          <line x1="50" y1="100" x2="550" y2="100" />
+          <line x1="50" y1="120" x2="550" y2="120" />
+          <line x1="50" y1="140" x2="550" y2="140" />
+          <line x1="50" y1="160" x2="550" y2="160" />
+        </g>
+
+        <!-- Notes + labels -->
+        <g fill="#213040">
+          <!-- E (bottom line) -->
+          <circle cx="120" cy="160" r="8" />
+          <text x="110" y="185" font-size="16">E</text>
+
+          <!-- F (space) -->
+          <circle cx="200" cy="150" r="8" />
+          <text x="192" y="175" font-size="16">F</text>
+
+          <!-- G (line) -->
+          <circle cx="280" cy="140" r="8" />
+          <text x="272" y="165" font-size="16">G</text>
+
+          <!-- A (space) -->
+          <circle cx="360" cy="130" r="8" />
+          <text x="352" y="155" font-size="16">A</text>
+
+          <!-- B (line) -->
+          <circle cx="440" cy="120" r="8" />
+          <text x="435" y="145" font-size="16">B</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Example: Basic Rhythm Notation</h2>
+    <p>These diagrams show whole, half, quarter, and eighth notes with labels for duration.</p>
+
+    <div class="img-box">
+      <svg width="600" height="200" viewBox="0 0 600 200">
+        <!-- Whole note -->
+        <ellipse cx="120" cy="100" rx="18" ry="12" fill="none" stroke="#213040" stroke-width="3" />
+        <text x="95" y="140" font-size="16">Whole</text>
+
+        <!-- Half note -->
+        <ellipse cx="240" cy="100" rx="18" ry="12" fill="none" stroke="#213040" stroke-width="3" />
+        <line x1="258" y1="100" x2="258" y2="50" stroke="#213040" stroke-width="3" />
+        <text x="215" y="140" font-size="16">Half</text>
+
+        <!-- Quarter note -->
+        <circle cx="360" cy="100" r="12" fill="#213040" />
+        <line x1="372" y1="100" x2="372" y2="40" stroke="#213040" stroke-width="3" />
+        <text x="330" y="140" font-size="16">Quarter</text>
+
+        <!-- Eighth note -->
+        <circle cx="480" cy="100" r="12" fill="#213040" />
+        <line x1="492" y1="100" x2="492" y2="40" stroke="#213040" stroke-width="3" />
+        <path d="M492 40 Q510 50 492 60" fill="none" stroke="#213040" stroke-width="3" />
+        <text x="455" y="140" font-size="16">Eighth</text>
+      </svg>
+    </div>
+  </div>
+
+</body>
+</html>

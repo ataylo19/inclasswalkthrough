@@ -1,0 +1,19 @@
+h1{
+    font-size: 36px;
+    font-weight: bold;
+    color:black;
+    text-align: center;
+}
+body{
+    background-color:lightblue;
+    font-family:Arial, Helvetica, sans-serif
+}
+h2{
+    text-decoration: underline;
+    color:navy;
+    text-align: center;
+}
+h3{
+    color:darkred;
+    font-family: 'Courier New', Courier, monospace;
+}

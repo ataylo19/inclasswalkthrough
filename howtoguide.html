@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>How to Read Music — A Beginner's Guide</title>
+
+  <!-- Soft pastel styling and accessible typography -->
+  <style>
+    :root{
+      --bg: #f8faf8;           /* very light mint */
+      --card: #ffffff;         /* white for cards */
+      --accent-1: #cde7e0;     /* pastel teal */
+      --accent-2: #f7d6e0;     /* pastel pink */
+      --accent-3: #f7f0c2;     /* pastel yellow */
+      --text: #213040;         /* deep desaturated navy for contrast */
+      --muted: #416171;        /* muted darker teal */
+      --radius: 14px;
+      --maxw: 880px;
+      --gap: 18px;
+      --shadow: 0 8px 20px rgba(33,48,64,0.06);
+      --step-accent: linear-gradient(90deg, rgba(205,231,224,0.9), rgba(247,214,224,0.9));
+    }
+
+    /* Reset and base */
+    * { box-sizing: border-box; }
+    html,body { height: 100%; }
+    body{
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: radial-gradient(1200px 600px at 10% 10%, var(--accent-1) 0%, rgba(255,255,255,0) 20%),
+                  radial-gradient(1000px 500px at 90% 90%, var(--accent-2) 0%, rgba(255,255,255,0) 20%),
+                  var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .container{
+      width: 100%;
+      max-width: var(--maxw);
+      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.92));
+      border-radius: calc(var(--radius) + 6px);
+      box-shadow: var(--shadow);
+      padding: 34px;
+      margin-bottom: 40px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    h1{
+      margin: 6px 0 10px;
+      font-size: 2rem;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: var(--text);
+    }
+    p.lead {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .grid{
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 24px;
+      margin-top: 26px;
+    }
+
+    @media (max-width: 880px){
+      .grid { grid-template-columns: 1fr; }
+      .aside { order: -1; }
+    }
+
+    /* Main content card */
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: 0 6px 18px rgba(33,48,64,0.04);
+      overflow: hidden;
+    }
+
+    /* Steps list */
+    .steps {
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .step {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 12px;
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4));
+      border: 1px solid rgba(33,48,64,0.03);
+    }
+
+    .step .num {
+      min-width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--step-accent);
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      color: var(--text);
+      box-shadow: 0 3px 8px rgba(33,48,64,0.04);
+      font-size: 1rem;
+    }
+
+    .step h3 {
+      margin: 0 0 6px;
+      font-size: 1.02rem;
+      color: var(--text);
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.45;
+    }
+
+    /* Aside column */
+    .aside .resources {
+      display: grid;
+      gap: 10px;
+    }
+
+    .resource {
+      padding: 12px;
+      border-radius: 10px;
+      background: linear-gradient(90deg, rgba(248,244,255,0.6), rgba(255,255,255,0.6));
+      border: 1px solid rgba(33,48,64,0.03);
+    }
+    .resource a {
+      color: #1b5660;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .resource p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    footer {
+      margin-top: 18px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    /* subtle helpful list styling */
+    ul.clean {
+      margin: 8px 0 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    /* accessible focus outlines for links */
+    a:focus {
+      outline: 3px solid rgba(27,86,96,0.14);
+      outline-offset: 2px;
+      border-radius: 6px;
+    }
+
+    /* small icon style (simple) */
+    .icon {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      margin-right: 6px;
+      vertical-align: -2px;
+      opacity: 0.95;
+    }
+
+  </style>
+</head>
+<body>
+  <main class="container" role="main" aria-labelledby="main-title">
+    <div class="lead">Menu: <a href="index.html">Home</a></div>
+    <header>
+      <h1 id="main-title">How to Read Music — A Beginner's Guide</h1>
+      <p class="lead">Simple, step-by-step tips to get you reading notes, rhythms, and basic sheet music quickly.</p>
+    </header>
+
+    <section class="grid" aria-describedby="intro">
+      <div class="card" id="intro">
+        <h2 style="margin-top:0; font-size:1.15rem;">Start here: the 9 essential steps</h2>
+
+        <ol class="steps" aria-label="Steps to read music">
+          <li class="step" aria-labelledby="step1">
+            <div class="num" id="step1">1</div>
+            <div>
+              <h3>Learn the staff and clefs</h3>
+              <p>The staff has five lines and four spaces. Treble and bass clefs tell you which notes those lines and spaces represent. Start with the treble clef (used for many melodies) and then learn the bass clef.</p>
+            </div>
+          </li>
+
+          <li class="step" aria-labelledby="step2">
+            <div class="num" id="step2">2</div>
+            <div>
+              <h3>Know the note names</h3>
+              <p>Lines and spaces each have letter names (A–G). Use simple mnemonics (e.g., for treble-clef lines: <em>Every Good Boy Does Fine</em>) and practice identifying notes on the staff and your instrument.</p>
+            </div>
+          </li>
+
+          <li class="step" aria-labelledby="step3">
+            <div class="num" id="step3">3</div>
+            <div>
+              <h3>Understand rhythm and note values</h3>
+              <p>Whole, half, quarter, eighth notes, and rests tell you how long to hold a pitch. Clap or tap rhythms slowly while counting beats (1 &ndash; 2 &ndash; 3 &ndash; 4).</p>
+            </div>
+          </li>
+
+          <li class="step" aria-labelledby="step4">
+            <div class="num" id="step4">4</div>
+            <div>
+              <h3>Learn time signatures</h3>
+              <p>The top number shows beats per measure, the bottom number shows the note value that gets one beat (e.g., 4/4, 3/4, 6/8). Practice counting measures while playing or clapping.</p>
+            </div>
+          </li>
+
+          <li class="step" aria-labelledby="step5">
+            <div class="num" id="step5">5</div>
+            <div>
+              <h3>Read key signatures and accidentals</h3>
+              <p>Key signatures at the start of the staff show which notes are sharp or flat throughout the piece. Accidentals (sharps, flats, naturals) change a note for that measure.</p>
+            </div>
+          </li>
+
+          <li class="step" aria-labelledby="step6">
+            <div class="num" id="step6">6</div>
+            <div>
+              <h3>Spot scales and intervals</h3>
+              <p>Recognize patterns like major and minor scales and the distances between notes (intervals). This helps when learning melodies and harmonies quickly.</p>
+            </div>
+          </li>
+
+          <li class="step" aria-labelledby="step7">
+            <div class="num" id="step7">7</div>
+            <div>
+              <h3>Follow dynamics and articulation</h3>
+              <p>Symbols like <em>p</em> (soft), <em>f</em> (loud), staccato (short), and legato (smooth) tell you how to shape the music — not just which notes and rhythms to play.</p>
+            </div>
+          </li>
+
+          <li class="step" aria-labelledby="step8">
+            <div class="num" id="step8">8</div>
+            <div>
+              <h3>Practice sight-reading in short bursts</h3>
+              <p>Choose short, simple pieces and read them slowly. Keep a steady beat, look ahead, and don't stop for mistakes — accuracy and fluency improve with regular, short practice sessions.</p>
+            </div>
+          </li>
+
+          <li class="step" aria-labelledby="step9">
+            <div class="num" id="step9">9</div>
+            <div>
+              <h3>Use tools: metronome, tuner, and note drills</h3>
+              <p>Metronomes help steady rhythm; tuners help pitch; apps and flashcards speed up note recognition. Combine these with real music practice for best results.</p>
+            </div>
+          </li>
+        </ol>
+
+        <div style="margin-top:18px;">
+          <h3 style="margin-bottom:8px;">Quick tips</h3>
+          <ul class="clean" aria-hidden="false">
+            <li>Learn the staff in chunks — one clef at a time.</li>
+            <li>Practice identifying 5 notes per day instead of all at once.</li>
+            <li>Record yourself to track progress.</li>
+            <li>Play with a friend or teacher when possible — feedback speeds learning.</li>
+          </ul>
+        </div>
+
+        <footer>
+          <p>Start simple, be consistent, and have fun — reading music is a skill you build bit by bit.</p>
+        </footer>
+      </div>
+
+      <aside class="aside">
+        <div class="card" style="padding:16px;">
+          <h3 style="margin-top:0; margin-bottom:10px;">Resources & practice</h3>
+
+          <div class="resources" role="list">
+            <div class="resource" role="listitem">
+              <a href="https://www.musictheory.net" target="_blank" rel="noopener">musictheory.net</a>
+              <p>Excellent interactive lessons and exercises for notes, rhythm, and ear training.</p>
+            </div>
+
+            <div class="resource" role="listitem">
+              <a href="https://www.teoria.com" target="_blank" rel="noopener">Teoria</a>
+              <p>Clear tutorials plus drills for reading notes and rhythm practice.</p>
+            </div>
+
+            <div class="resource" role="listitem">
+              <a href="https://www.8notes.com" target="_blank" rel="noopener">8notes — Learn to Read Music</a>
+              <p>Beginner-friendly songs and exercises arranged by difficulty and instrument.</p>
+            </div>
+
+            <div class="resource" role="listitem">
+              <a href="https://www.classicsforkids.com/learn/music_reading.php" target="_blank" rel="noopener">Classics for Kids — Music Reading</a>
+              <p>Child-friendly explanations and printable practice sheets (great for visual learners).</p>
+            </div>
+          </div>
+
+          <div style="margin-top:12px; font-size:0.95rem; color:var(--muted);">
+            <strong>Practice idea:</strong>
+            <p style="margin:6px 0 0;">Use a metronome at 60 bpm. Pick a short melody, clap the rhythm for 1 week, then play it on your instrument the next week.</p>
+          </div>
+        </div>
+
+        <div style="height:16px"></div>
+
+        <div class="card" style="padding:14px;">
+          <h4 style="margin:0 0 6px;">Common small exercises</h4>
+          <ul class="clean" aria-hidden="false">
+            <li>Flashcards: 10 minutes/day (notes & key signatures).</li>
+            <li>Rhythm clapping: 5–10 short patterns, count aloud.</li>
+            <li>Interval recognition: sing two notes and name the interval.</li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+  </main>
+</body>
+</html>
